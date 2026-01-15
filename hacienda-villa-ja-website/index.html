@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacienda y Villa J.A - Villa Privada de Lujo en Santiago</title>
+    
+    <!-- Meta tags for better sharing (WhatsApp, Facebook, etc.) -->
+    <meta name="description" content="Villa privada de lujo en Licey al Medio, Santiago. 5 suites, piscina grande, jacuzzi, discoteca y terrazas. $250/noche. Ideal para 12-15 personas o eventos hasta 50.">
+    <meta property="og:title" content="Hacienda y Villa J.A - Villa de Lujo en Santiago, RD">
+    <meta property="og:description" content="Alquiler exclusivo: 5 suites, piscina para 30+, discoteca y terrazas. $250/noche. A solo 10 min del aeropuerto STI.">
+    <meta property="og:type" content="website">
+    <!-- After going live, replace with your actual live URL -->
+    <!-- <meta property="og:image" content="https://your-live-site.com/images/outdoor-pool.jpg"> -->
+    <!-- <meta property="og:url" content="https://your-live-site.com"> -->
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; line-height: 1.6; color: #333; background-color: #f9f9f9; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 1rem; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { display: inline-block; background: #8B5A2B; color: white; padding: 12px 24px; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; font-size: 16px; font-weight: 600; transition: all 0.3s ease; }
+        .btn:hover { background: #6D4729; transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        section { padding: 80px 0; }
+        .section-title { text-align: center; margin-bottom: 50px; position: relative; }
+        .section-title:after { content: ''; display: block; width: 70px; height: 3px; background: #8B5A2B; margin: 15px auto 0; }
+        header { background-color: white; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: #8B5A2B; text-decoration: none; }
+        .logo span { color: #DAA520; }
+        .nav-menu { display: flex; list-style: none; }
+        .nav-menu li { margin-left: 30px; }
+        .nav-menu a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s ease; }
+        .nav-menu a:hover { color: #8B5A2B; }
+        .menu-btn { display: none; background: none; border: none; font-size: 24px; cursor: pointer; color: #333; }
+        .lang-switch { position: fixed; top: 20px; right: 20px; background: #DAA520; color: white; border: none; padding: 10px 18px; border-radius: 30px; cursor: pointer; font-weight: 600; z-index: 1100; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .lang-switch:hover { background: #B8860B; }
+        #home { background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/outdoor-pool.jpg'); background-size: cover; background-position: center; background-attachment: fixed; min-height: 100vh; display: flex; align-items: center; text-align: center; color: white; padding-top: 80px; }
+        .hero-content { max-width: 800px; margin: 0 auto; }
+        .hero-content h1 { font-size: 48px; margin-bottom: 20px; }
+        .hero-content p { font-size: 20px; margin-bottom: 30px; }
+        .cta-button { background: #DAA520; color: white; font-size: 18px; padding: 14px 30px; border-radius: 6px; }
+        .cta-button:hover { background: #B8860B; }
+        .about-content { display: flex; align-items: center; gap: 50px; }
+        .about-image img { width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease; text-align: center; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-icon { font-size: 50px; color: #8B5A2B; margin-bottom: 20px; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .gallery-item { position: relative; overflow: hidden; border-radius: 12px; height: 320px; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.12); }
+        .gallery-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); color: white; display: flex; flex-direction: column; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.5s ease; }
+        .gallery-item:hover .gallery-overlay { opacity: 1; }
+        .booking { background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/bedroom.jpg'); background-size: cover; background-position: center; background-attachment: fixed; text-align: center; color: white; }
+        .price-highlight { font-size: 32px; font-weight: 700; color: #DAA520; margin: 20px 0; }
+        .booking-btn { background: #DAA520; font-size: 20px; padding: 16px 40px; border-radius: 8px; }
+        .booking-btn:hover { background: #B8860B; }
+        footer { background-color: #222; color: white; padding: 60px 0 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-bottom: 40px; }
+        .social-icons { display: flex; gap: 15px; margin-top: 20px; }
+        .social-icons a { width: 44px; height: 44px; background: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; transition: all 0.3s ease; }
+        .social-icons a:hover { background: #DAA520; transform: translateY(-5px); }
+        .copyright { text-align: center; padding-top: 20px; border-top: 1px solid #444; color: #aaa; font-size: 14px; }
+        @media (max-width: 992px) { .about-content { flex-direction: column; } }
+        @media (max-width: 768px) {
+            .nav-menu { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: white; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 20px 0; }
+            .nav-menu.active { display: flex; }
+            .nav-menu li { margin: 15px 0; text-align: center; }
+            .menu-btn { display: block; }
+            .hero-content h1 { font-size: 36px; }
+            .lang-switch { position: relative; top: auto; right: auto; margin: 20px auto; display: block; width: fit-content; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Switch Button -->
+    <button class="lang-switch" onclick="toggleLanguage()">English</button>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Hacienda y Villa <span>J.A</span></a>
+            <nav>
+                <button class="menu-btn"><i class="fas fa-bars"></i></button>
+                <ul class="nav-menu">
+                    <li><a href="#home" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="#about" data-es="Nosotros" data-en="About">Nosotros</a></li>
+                    <li><a href="#features" data-es="Características" data-en="Features">Características</a></li>
+                    <li><a href="#gallery" data-es="Galería" data-en="Gallery">Galería</a></li>
+                    <li><a href="#booking" data-es="Reservar" data-en="Book Now">Reservar</a></li>
+                    <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home">
+        <div class="container hero-content">
+            <h1 data-es="Bienvenidos a Hacienda y Villa J.A" data-en="Welcome to Hacienda y Villa J.A">Bienvenidos a Hacienda y Villa J.A</h1>
+            <p data-es="Villa privada de lujo en Licey al Medio, Santiago – A solo 10 minutos del Aeropuerto Internacional del Cibao (STI).<br>Capacidad para 12-15 huéspedes | Piscina para más de 30 | Eventos hasta 50 personas" data-en="Private luxury villa in Licey al Medio, Santiago – Only 10 minutes from Cibao International Airport (STI).<br>Sleeps 12-15 guests | Pool for 30+ | Events up to 50 people">Villa privada de lujo en Licey al Medio, Santiago – A solo 10 minutos del Aeropuerto Internacional del Cibao (STI).<br>Capacidad para 12-15 huéspedes | Piscina para más de 30 | Eventos hasta 50 personas</p>
+            <a href="#booking" class="btn cta-button" data-es="Reservar Ahora" data-en="Book Your Stay">Reservar Ahora</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-es="Sobre Hacienda y Villa J.A" data-en="About Hacienda y Villa J.A">Sobre Hacienda y Villa J.A</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/terrace.jpg" alt="Terraza junto a la piscina">
+                </div>
+                <div class="about-text">
+                    <h3 data-es="Tu oasis privado en República Dominicana" data-en="Your Private Oasis in the Dominican Republic">Tu oasis privado en República Dominicana</h3>
+                    <p data-es="Ideal para vacaciones familiares, reuniones o celebraciones especiales. Cómoda capacidad para 12–15 huéspedes en 5 suites de lujo con baño privado." data-en="Perfect for family vacations, group getaways, or special events. Comfortably sleeps 12–15 guests in 5 luxury suites with private bathrooms.">Ideal para vacaciones familiares, reuniones o celebraciones especiales. Cómoda capacidad para 12–15 huéspedes en 5 suites de lujo con baño privado.</p>
+                    <p data-es="Organiza fiestas inolvidables: piscina exterior grande para más de 30 personas, jacuzzi interior, discoteca en el lugar, 2 terrazas, estacionamiento seguro para 20 vehículos y espacio para eventos hasta 50 personas." data-en="Host unforgettable parties: large outdoor pool for 30+, indoor jacuzzi, on-site disco club, 2 terraces, secure parking for 20 cars, and space for events up to 50 people.">Organiza fiestas inolvidables: piscina exterior grande para más de 30 personas, jacuzzi interior, discoteca en el lugar, 2 terrazas, estacionamiento seguro para 20 vehículos y espacio para eventos hasta 50 personas.</p>
+                    <a href="#booking" class="btn" data-es="Consultar Disponibilidad" data-en="Inquire Now">Consultar Disponibilidad</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title" data-es="Características Principales" data-en="Key Features">Características Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bed"></i></div>
+                    <h3 data-es="5 Suites de Lujo" data-en="5 Luxury Suites">5 Suites de Lujo</h3>
+                    <p data-es="Aloja cómodamente 12–15 personas" data-en="Sleeps 12–15 guests comfortably">Aloja cómodamente 12–15 personas</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-swimming-pool"></i></div>
+                    <h3 data-es="Piscinas Amplias" data-en="Large Pools">Piscinas Amplias</h3>
+                    <p data-es="Piscina exterior + jacuzzi interior para más de 30" data-en="Outdoor pool + indoor jacuzzi for 30+">Piscina exterior + jacuzzi interior para más de 30</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-glass-cheers"></i></div>
+                    <h3 data-es="Discoteca y 2 Terrazas" data-en="Disco Club & 2 Terraces">Discoteca y 2 Terrazas</h3>
+                    <p data-es="Listo para fiestas y relajación" data-en="Perfect for parties and relaxation">Listo para fiestas y relajación</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-car"></i></div>
+                    <h3 data-es="Estacionamiento" data-en="Parking">Estacionamiento</h3>
+                    <p data-es="Espacio seguro para 20 vehículos" data-en="Secure space for 20 cars">Espacio seguro para 20 vehículos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3 data-es="Eventos" data-en="Events">Eventos</h3>
+                    <p data-es="Hasta 50 invitados para celebraciones" data-en="Up to 50 guests for celebrations">Hasta 50 invitados para celebraciones</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-dollar-sign"></i></div>
+                    <h3 data-es="$250 por Noche" data-en="$250 per Night">$250 por Noche</h3>
+                    <p data-es="Lujo a un precio accesible" data-en="Affordable luxury experience">Lujo a un precio accesible</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title" data-es="Galería" data-en="Gallery">Galería</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/outdoor-pool.jpg" alt="Piscina exterior principal">
+                    <div class="gallery-overlay">
+                        <h3 data-es="Piscina Exterior Principal" data-en="Main Outdoor Pool">Piscina Exterior Principal</h3>
+                        <p data-es="Con cascada y espacio amplio" data-en="With waterfall and large space">Con cascada y espacio amplio</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/indoor-pool.jpg" alt="Jacuzzi interior">
+                    <div class="gallery-overlay">
+                        <h3 data-es="Jacuzzi Interior" data-en="Indoor Jacuzzi">Jacuzzi Interior</h3>
+                        <p data-es="Área privada de relajación" data-en="Private relaxation area">Área privada de relajación</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/bedroom.jpg" alt="Suite principal con iluminación LED">
+                    <div class="gallery-overlay">
+                        <h3 data-es="Suite Principal" data-en="Master Suite">Suite Principal</h3>
+                        <p data-es="Iluminación estilo discoteca" data-en="Disco-style lighting">Iluminación estilo discoteca</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/bathroom.jpg" alt="Baño moderno">
+                    <div class="gallery-overlay">
+                        <h3 data-es="Baño de Lujo" data-en="Luxury Bathroom">Baño de Lujo</h3>
+                        <p data-es="En cada suite" data-en="In every suite">En cada suite</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/terrace.jpg" alt="Terraza con vista a la piscina">
+                    <div class="gallery-overlay">
+                        <h3 data-es="Terraza Junto a la Piscina" data-en="Poolside Terrace">Terraza Junto a la Piscina</h3>
+                        <p data-es="Relájate o trabaja con vista increíble" data-en="Relax or work with amazing view">Relájate o trabaja con vista increíble</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking" class="booking">
+        <div class="container booking-content">
+            <h2 class="section-title" data-es="¿Listo para Reservar?" data-en="Ready to Book Your Stay?">¿Listo para Reservar?</h2>
+            <p class="price-highlight">$250 por Noche / $250 per Night</p>
+            <p data-es="Capacidad 12–15 personas | Piscina y discoteca para más de 30 | Eventos hasta 50 invitados | Estacionamiento para 20 vehículos" data-en="Sleeps 12–15 | Pool & disco for 30+ | Events up to 50 guests | Parking for 20 cars">Capacidad 12–15 personas | Piscina y discoteca para más de 30 | Eventos hasta 50 invitados | Estacionamiento para 20 vehículos</p>
+            <p data-es="Contáctanos directamente:" data-en="Contact us directly:">Contáctanos directamente:</p>
+            <p><strong>Call or WhatsApp: 809-757-7800</strong></p>
+            <a href="tel:+18097577800" class="btn booking-btn" data-es="Llamar 809-757-7800" data-en="Call 809-757-7800">Llamar 809-757-7800</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Hacienda y Villa J.A</h3>
+                    <p data-es="Tu villa privada de lujo en Licey al Medio, Santiago de los Caballeros." data-en="Your private luxury villa in Licey al Medio, Santiago de los Caballeros.">Tu villa privada de lujo en Licey al Medio, Santiago de los Caballeros.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/18097577800"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3 data-es="Enlaces Rápidos" data-en="Quick Links">Enlaces Rápidos</h3>
+                    <a href="#home" data-es="Inicio" data-en="Home">Inicio</a>
+                    <a href="#about" data-es="Nosotros" data-en="About">Nosotros</a>
+                    <a href="#features" data-es="Características" data-en="Features">Características</a>
+                    <a href="#gallery" data-es="Galería" data-en="Gallery">Galería</a>
+                    <a href="#booking" data-es="Reservar" data-en="Book Now">Reservar</a>
+                </div>
+                <div class="footer-column">
+                    <h3 data-es="Contacto" data-en="Contact">Contacto</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Licey al Medio, Santiago de los Caballeros, República Dominicana</p>
+                    <p><i class="fas fa-plane"></i> <span data-es="A 10 minutos del Aeropuerto del Cibao (STI)" data-en="10 minutes from Cibao Airport (STI)">A 10 minutos del Aeropuerto del Cibao (STI)</span></p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+18097577800">809-757-7800</a></p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Hacienda y Villa J.A. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleLanguage() {
+            const isSpanish = document.documentElement.lang === 'es';
+            document.documentElement.lang = isSpanish ? 'en' : 'es';
+            document.querySelector('.lang-switch').textContent = isSpanish ? 'Español' : 'English';
+
+            document.querySelectorAll('[data-es]').forEach(el => {
+                el.textContent = isSpanish ? el.dataset.en : el.dataset.es;
+            });
+        }
+
+        // Mobile menu
+        const menuBtn = document.querySelector('.menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        menuBtn.addEventListener('click', () => navMenu.classList.toggle('active'));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
